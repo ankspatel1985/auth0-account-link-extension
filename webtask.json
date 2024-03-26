@@ -1,7 +1,7 @@
 {
   "title": "Custom Account Link",
   "name": "custom-auth0-account-link",
-  "version": "2.7.1",
+  "version": "2.7.2",
   "preVersion": "2.7.0",
   "author": "auth0 + pjain11",
   "description":
