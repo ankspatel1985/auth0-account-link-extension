@@ -4,6 +4,7 @@
 
 module.exports = function(currentUser, matchingUsers, params, token) {
   try {
+    console.log('token', token);
     loadLinkPage(token);
   } catch (e) {
     console.error(e);
@@ -35,7 +36,7 @@ module.exports = function(currentUser, matchingUsers, params, token) {
     };
 
     var updateContinueUrl = function(linkEl, domain, state) {
-      linkEl.href = domain + 'continue?state=' + state;
+      // linkEl.href = domain + 'continue?state=' + state;
     };
 
     linkEl.addEventListener('click', function(e) {
