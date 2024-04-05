@@ -13,7 +13,7 @@ module.exports = function(currentUser, matchingUsers, params, token) {
 
   function loadLinkPage(token) {
     var linkEl = document.getElementById('link');
-    var skipEl = document.getElementById('skip');
+    // var skipEl = document.getElementById('skip');
     var connections = matchingUsers
       .reduce(function(acc, user) {
         return acc.concat(user.identities);
@@ -35,9 +35,9 @@ module.exports = function(currentUser, matchingUsers, params, token) {
       window.location = domain + 'authorize?' + query;
     };
 
-    var updateContinueUrl = function(linkEl, domain, state) {
-      // linkEl.href = domain + 'continue?state=' + state;
-    };
+    // var updateContinueUrl = function(linkEl, domain, state) {
+    //   linkEl.href = domain + 'continue?state=' + state;
+    // };
 
     linkEl.addEventListener('click', function(e) {
       authorize(token.iss, {
@@ -55,7 +55,7 @@ module.exports = function(currentUser, matchingUsers, params, token) {
       });
     });
 
-    updateContinueUrl(skipEl, token.iss, params.state);
+    // updateContinueUrl(skipEl, token.iss, params.state);
 
     if (params.error_type === 'accountMismatch') {
       loadAccountMismatchError();
