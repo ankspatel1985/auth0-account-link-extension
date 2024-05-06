@@ -23,10 +23,7 @@ module.exports = ({
   locale,
   params,
   token
-}) => {
-  console.log(`dynamicSettings :${JSON.stringify(dynamicSettings)}`);
-  console.log(`locale :${JSON.stringify(locale)}`);
-  console.log(`params :${JSON.stringify(params)}`);
+}) =>
   Promise.all([buildAuth0Widget(dynamicSettings, identities, locale), getStorage().read()])
     .then(([widget, data]) => {
       const template = data.settings ? data.settings.template : defaultTemplate;
@@ -38,4 +35,3 @@ module.exports = ({
         ExtensionScripts: buildExtensionScripts(currentUser, matchingUsers, params, token)
       });
     });
-};
