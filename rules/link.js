@@ -29,7 +29,7 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
     token: {
       clientId: '${clientID}',
       clientSecret: '${clientSecret}',
-      issuer: auth0.domain
+      issuer: 'local.hingehealth.dev'
     }
   };
 
@@ -71,7 +71,7 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
       // since merging already active accounts can be a
       // destructive action
       function firstLogin() {
-        return context.stats.loginsCount <= 1000;
+        return context.stats.loginsCount <= 10000;
       }
 
       // Check if we're coming back from a redirect
