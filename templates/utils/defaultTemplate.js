@@ -4,9 +4,9 @@ module.exports = `
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <meta name="author" content="Auth0">
+    <meta name="author" content="hinge health">
     <meta name="description" content="Easily link two accounts into one">
-    <title>Auth0 Account Linking Extension</title>
+    <title>Account Linking Extension</title>
     <link rel="shortcut icon" href="https://auth0.com/auth0-styleguide/img/favicon.png" />
     <style>
     .auth0-lock-container {
