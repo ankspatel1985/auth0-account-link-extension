@@ -14,6 +14,11 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
 
   var CONTINUE_PROTOCOL = 'redirect-callback';
   var LOG_TAG = '[ACCOUNT_LINK]: ';
+  console.log(LOG_TAG, 'Entered Account Link Rule');	
+  console.log(LOG_TAG, 'auth0 domain: ' + auth0.domain);
+  console.log(LOG_TAG, 'auth0 baseUrl: ' + auth0.baseUrl);
+  console.log(LOG_TAG, 'auth0 extensionURL: ' + extensionURL);
+  console.log(LOG_TAG, 'auth0 clientID: ' + clientID);
 
   // 'query' can be undefined when using '/oauth/token' to log in
   context.request.query = context.request.query || {};
