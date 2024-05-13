@@ -72,7 +72,7 @@ module.exports = (dynamicSettings, identities, locale = 'en') =>
                                 </div>
                                 <div class="auth0-lock-header-welcome">
                                   ${getLogo(settings)}
-                                  <div class="auth0-lock-name">${getTitle(settings, t)}</div>
+                                  <div class="auth0-lock-name" id="header-title">${getTitle(settings, t)}</div>
                                 </div>
                             </div>
                             <div id="error-message" class="auth0-global-message auth0-global-message-error"></div>
