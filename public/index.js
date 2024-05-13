@@ -84,10 +84,17 @@ module.exports = function(currentUser, matchingUsers, params, token) {
 
   function loadAccountMismatchError() {
     var messageEl = document.getElementById('error-message');
-    var msg = 'Same Email Address'
+    var msg = 'Accounts must have matching email addresses. Please try again.';
       //window.Auth0AccountLinkingExtension.locale.sameEmailAddressError ||
       //'Accounts must have matching email addresses. Please try again.';
-
+    var userLang = navigator.language || navigator.userLanguage; 
+      if (userLang.includes('en')) {
+        var msg = 'Accounts must have matching email addresses. Please try again.';
+      } else if (userLang.includes('fr')) {
+        var msg = 'Les comptes doivent avoir des adresses e-mail correspondantes. Veuillez réessayer.';
+      } else if (userLang.includes('es')) {
+        var msg = 'Las cuentas deben tener direcciones de correo electrónico coincidentes. Inténtalo de nuevo.';
+      }      
     messageEl.innerHTML = msg;
     messageEl.style.display = 'block';
   }
