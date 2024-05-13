@@ -16,9 +16,6 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
   var LOG_TAG = '[ACCOUNT_LINK]: ';
   console.log(LOG_TAG, 'Entered Account Link Rule');	
   console.log(LOG_TAG, 'auth0 domain: ' + auth0.domain);
-  console.log(LOG_TAG, 'auth0 baseUrl: ' + auth0.baseUrl);
-  console.log(LOG_TAG, 'auth0 extensionURL: ' + ${extensionURL});
-  console.log(LOG_TAG, 'auth0 clientID: ' + ${clientID});
 
   // 'query' can be undefined when using '/oauth/token' to log in
   context.request.query = context.request.query || {};
@@ -32,9 +29,24 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
     token: {
       clientId: '${clientID}',
       clientSecret: '${clientSecret}',
-      issuer: 'local.hingehealth.dev'
+      issuer: issuerConfig(auth0.domain)
     }
   };
+
+  function issuerConfig(domain) {
+    switch(domain) {
+       case 'hinge-health-local.us.auth0.com':
+           return 'local.hingehealth.dev';
+       case 'hinge-health-dev.us.auth0.com':
+           return 'login.hingehealth.dev';
+       case 'hinge-health-stage.us.auth0.com':
+           return 'login.hingehealth.io';
+       case 'hinge-health.us.auth0.com':
+           return 'login.hingehealth.com';
+       default:
+           return null; // Or whatever you want to return for other cases
+   }
+ }
 
   // If the user does not have an e-mail account,
   // just continue the authentication flow.
