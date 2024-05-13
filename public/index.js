@@ -84,9 +84,9 @@ module.exports = function(currentUser, matchingUsers, params, token) {
 
   function loadAccountMismatchError() {
     var messageEl = document.getElementById('error-message');
-    var msg =
-      window.Auth0AccountLinkingExtension.locale.sameEmailAddressError ||
-      'Accounts must have matching email addresses. Please try again.';
+    var msg = 'Same Email Address'
+      //window.Auth0AccountLinkingExtension.locale.sameEmailAddressError ||
+      //'Accounts must have matching email addresses. Please try again.';
 
     messageEl.innerHTML = msg;
     messageEl.style.display = 'block';
