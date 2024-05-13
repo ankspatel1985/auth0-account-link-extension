@@ -34,11 +34,11 @@ src: url(https://assets.ctfassets.net/hjcv6wdwxsdz/79qKfazNU8OVDk4Ie6opk7/da7289
     var userLang = navigator.language || navigator.userLanguage; 
     if (userLang.includes('en')) {
         document.getElementById("message").innerHTML = "It looks like you have another account with Hinge Health with the same email address. We recommend you link these accounts.";
-        document.getElementById("header-title").innderText = "Link your accounts";
-        document.getElementById("label-value").innderText = "Continue";
+        document.getElementById("header-title").innerText = "Link your accounts";
+        document.getElementById("label-value").innerText = "Continue";
     } else if (userLang.includes('fr')) {
         document.getElementById("message").innerHTML = "Il semble que vous ayez un autre compte avec la même adresse e-mail. Nous vous recommandons de lier ces comptes.";
-        document.getElementById("header-title").innderText = "Liez vos comptes";   
+        document.getElementById("header-title").innerText = "Liez vos comptes";   
         document.getElementById("label-value").innerText = "Continuer";
     } else if (userLang.includes('es')) {
         document.getElementById("message").innerHTML = "Parece que ya tienes otra cuenta con la misma dirección de correo electrónico. Recomendamos que vincules las cuentas.";
