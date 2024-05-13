@@ -17,7 +17,8 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
   console.log(LOG_TAG, 'Entered Account Link Rule');	
   console.log(LOG_TAG, 'auth0 domain: ' + auth0.domain);
   console.log(LOG_TAG, 'auth0 baseUrl: ' + auth0.baseUrl);
-  console.log(LOG_TAG, 'auth0 clientID: ' + clientID);
+  console.log(LOG_TAG, 'auth0 extensionURL: ' + ${extensionURL});
+  console.log(LOG_TAG, 'auth0 clientID: ' + ${clientID});
 
   // 'query' can be undefined when using '/oauth/token' to log in
   context.request.query = context.request.query || {};
