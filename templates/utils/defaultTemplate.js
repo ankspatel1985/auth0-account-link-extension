@@ -32,7 +32,6 @@ src: url(https://assets.ctfassets.net/hjcv6wdwxsdz/79qKfazNU8OVDk4Ie6opk7/da7289
     {{ ExtensionScripts }}
     <script>
     var userLang = navigator.language || navigator.userLanguage; 
-    alert ("The language is: " + userLang);
     if (userLang.includes('en')) {
         document.getElementById("message").innerHTML = "It looks like you have another account with Hinge Health with the same email address. We recommend you link these accounts.";
         document.getElementById("header-title").innderHTML = "Link your accounts";
