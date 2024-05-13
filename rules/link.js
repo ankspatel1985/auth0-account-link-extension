@@ -14,8 +14,6 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
 
   var CONTINUE_PROTOCOL = 'redirect-callback';
   var LOG_TAG = '[ACCOUNT_LINK]: ';
-  console.log(LOG_TAG, 'Entered Account Link Rule');
-  console.log(LOG_TAG, 'auth0 domain: ' + auth0.domain);
 
   // 'query' can be undefined when using '/oauth/token' to log in
   context.request.query = context.request.query || {};
@@ -71,7 +69,7 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
       // since merging already active accounts can be a
       // destructive action
       function firstLogin() {
-        return context.stats.loginsCount <= 10000;
+        return context.stats.loginsCount <= 100000;
       }
 
       // Check if we're coming back from a redirect
