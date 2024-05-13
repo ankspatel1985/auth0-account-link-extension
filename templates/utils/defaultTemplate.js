@@ -31,30 +31,26 @@ src: url(https://assets.ctfassets.net/hjcv6wdwxsdz/79qKfazNU8OVDk4Ie6opk7/da7289
     {{ Auth0Widget }}
     {{ ExtensionScripts }}
     <script>
-      window.onload = function(e) {
-        document.getElementById("skip").onclick = function() {
+    var userLang = navigator.language || navigator.userLanguage; 
+    if (userLang === 'en-US') {
+        document.getElementById("message").innerHTML = "It looks like you have another account with Hinge Health with the same email address. We recommend you link these accounts.";
+        document.getElementById("header-title").innderHTML = "Link your accounts";
+        document.getElementById("label-value").innderHTML = "Continue";
+    } else if (userLang === 'fr-FR' || userLang == 'fr-CA') {
+        document.getElementById("message").innerHTML = "Il semble que vous ayez un autre compte avec la même adresse e-mail. Nous vous recommandons de lier ces comptes.";
+        document.getElementById("header-title").innderHTML = "Liez vos comptes";   
+        document.getElementById("label-value").innderHTML = "Continuer";
+    } else if (userLang === 'es-US' || userLang == 'es-419') {
+        document.getElementById("message").innerHTML = "Parece que ya tienes otra cuenta con la misma dirección de correo electrónico. Recomendamos que vincules las cuentas.";
+        document.getElementById("header-title").innderHTML = "Vincula tus cuentas"; 
+        document.getElementById("label-value").innderHTML = "Continuar";
+    }      
+    window.onload = function(e) {
+      document.getElementById("skip").onclick = function() {
         this.href = "https://www.google.com ";
-        };
-      }();// invoke the function
-    
-      document.getElementById("message").innerHTML = "It looks like you have another account with Hinge Health with the same email address. We recommend you link these accounts.";  
+      };
+    }();// invoke the function     
       document.getElementById("skip").innerHTML = "Skip";
-
-      var userLang = navigator.language || navigator.userLanguage; 
-      if (userLang === 'en-US') {
-          document.getElementById("message").innerHTML = "It looks like you have another account with Hinge Health with the same email address. We recommend you link these accounts.";
-          document.getElementById("header-title").innderHTML = "Link your accounts";
-          document.getElementById("label-value").innderHTML = "Continue";
-      } else if (userLang === 'fr-FR' || userLang == 'fr-CA') {
-          document.getElementById("message").innerHTML = "Il semble que vous ayez un autre compte avec la même adresse e-mail. Nous vous recommandons de lier ces comptes.";
-          document.getElementById("header-title").innderHTML = "Liez vos comptes";   
-          document.getElementById("label-value").innderHTML = "Continuer";
-      } else if (userLang === 'es-US' || userLang == 'es-419') {
-          document.getElementById("message").innerHTML = "Parece que ya tienes otra cuenta con la misma dirección de correo electrónico. Recomendamos que vincules las cuentas.";
-          document.getElementById("header-title").innderHTML = "Vincula tus cuentas"; 
-          document.getElementById("label-value").innderHTML = "Continuar";
-      }      
-
     </script> 
   </body>
 </html>
